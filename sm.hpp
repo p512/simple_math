@@ -1,4 +1,3 @@
-#include <cmath>
 #include <iostream>
 
 namespace sm {
@@ -142,7 +141,7 @@ namespace sm {
         N exp(N x) {
             return sum<N, exp_term<N>, 0, 1, false>(x);
         }
-
+    
     template<typename N>
         N log(N x) {
             if(x <= 0.5)

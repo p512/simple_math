@@ -11,5 +11,8 @@ sm: sm.hpp
 main: main.cpp sm.hpp
 	$(CC) $(CFLAGS) main.cpp $(LDFLAGS) -o $(EXEC)
 
+test: test.cpp
+	$(CC) $(CFLAGS) test.cpp $(LDFLAGS) -o test
+	$(info Test file is compiled to ./test)
 clean:
 	rm -vf *.o *.so *.gch $(EXEC)

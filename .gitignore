@@ -8,3 +8,7 @@
 
 #executable
 lsm
+
+#tests
+test
+Catch/

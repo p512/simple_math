@@ -8,7 +8,7 @@ all: sm
 sm: sm.hpp
 	$(CC) $(CFLAGS) -c sm.hpp $(LDFLAGS)
 
-main: main.cpp sm
+main: main.cpp sm.hpp
 	$(CC) $(CFLAGS) main.cpp $(LDFLAGS) -o $(EXEC)
 
 clean:

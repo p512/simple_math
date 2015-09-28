@@ -10,3 +10,11 @@ TEST_CASE("Integral pow", "[pow]" ) {
         }
     }
 }
+
+TEST_CASE("Floating point pow", "[pow]") {
+    for(double i = 1; i < 7; i+=0.5) {
+        for(float j = 1; j < 7; j+=0.5) {
+            REQUIRE( Approx(sm::pow(i,j)) == std::pow(i,j) );
+        }
+    }
+}

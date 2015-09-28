@@ -30,7 +30,7 @@ namespace sm {
             public:
             facs() : value(fac<T, 0>::value) {}
         };
-
+    
     template<unsigned long n>
         double pi() {
             double sum = 1;
@@ -44,7 +44,7 @@ namespace sm {
             }
             return sum*4;
         }
-
+    
     template<typename N>
         class kahansum {
             N C, S, Y, T;
@@ -88,7 +88,7 @@ namespace sm {
         constexpr 
         typename std::enable_if<std::is_integral<G>::value,T>::type 
         pow(T b, G e) {
-            return e <= 0 ? 1 : b * pow(b, e-1);
+            return e == 0 ? 1 : (e & 1 ? (e < 0 ? 1/b : b) : 1) * pow(b, e/2) * pow(b, e/2) ;
         }
     
     template<typename N, typename G>

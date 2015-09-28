@@ -103,19 +103,19 @@ namespace sm {
     
     template<typename N>
     static inline N exp_term(N x, int i, unsigned long fac)
-	{
-		return pow(x,i)/fac;
-	}
+    {
+	return pow(x,i)/fac;
+    }
 	
-	template<typename N>
-	static inline N log_term1(N x, int i, unsigned long fac)
-	{
-		return pow(-1, i + 1) * pow(x - 1, i)/ (N)i ;
-	}
+    template<typename N>
+    static inline N log_term1(N x, int i, unsigned long fac)
+    {
+        return pow(-1, i + 1) * pow(x - 1, i)/ (N)i ;
+    }
 	
-	template<typename N>
-	static inline N log_term2(N x, int i, unsigned long fac)
-	{
+    template<typename N>
+    static inline N log_term2(N x, int i, unsigned long fac)
+    {
 		return pow((x - 1) / x, i) / (N)i ;
 	}
     

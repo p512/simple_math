@@ -45,6 +45,11 @@ namespace sm {
         return sum*4;
     }
 
+    template<typename T, typename G>
+    constexpr T pow(T b, G e) {
+        return e <= 0 ? 1 : b * pow(b, e-1);
+    }
+
     double sin(double x) {
         constexpr int terms = 20; 
         facs<unsigned long, terms> faclist;

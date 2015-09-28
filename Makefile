@@ -1,5 +1,7 @@
 CC=g++
-CFLAGS=-Ofast -march=native -mtune=native -std=c++11
+STD=c++11
+CFLAGS=-Ofast -march=native -mtune=native -Wall -Wextra -Wpedantic -std=$(STD)
+CDEBUG=-O0 -g -std=$(STD)
 LDFLAGS=-lm
 EXEC=lsm
 
@@ -11,8 +13,9 @@ sm: sm.hpp
 main: main.cpp sm.hpp
 	$(CC) $(CFLAGS) main.cpp $(LDFLAGS) -o $(EXEC)
 
-test: test.cpp
-	$(CC) $(CFLAGS) test.cpp $(LDFLAGS) -o test
+test: sm.hpp test.cpp
+	$(CC) $(CDEBUG) test.cpp $(LDFLAGS) -o test
 	$(info Test file is compiled to ./test)
+
 clean:
 	rm -vf *.o *.so *.gch $(EXEC)

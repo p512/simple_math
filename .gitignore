@@ -1,0 +1,10 @@
+#g++
+*.o
+*.so
+*.gch
+
+#vim
+*.swp
+
+#executable
+lsm

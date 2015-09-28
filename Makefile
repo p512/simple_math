@@ -12,5 +12,4 @@ main: main.cpp sm
 	$(CC) $(CFLAGS) main.cpp $(LDFLAGS) -o $(EXEC)
 
 clean:
-	rm -f *.o
-	rm -f *.so
+	rm -vf *.o *.so *.gch $(EXEC)

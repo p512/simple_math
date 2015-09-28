@@ -74,7 +74,7 @@ namespace sm {
 
     template<typename N, N (func)(double x, int i, unsigned long fac), int start, int increment, bool add_x>
         static inline N sum(N x) {
-            constexpr int terms = 30; 
+            constexpr int terms = 20; 
             facs<double, terms> faclist;
             kahansum<N> sum(add_x ? x : 0); 
             for(int i = start; i < terms; i+=increment) {

@@ -2,7 +2,6 @@
 #include "Catch/include/catch.hpp"
 #include "sm.hpp"
 #include <cmath>
-#include <fstream>
 
 TEST_CASE("Integral pow", "[pow]" ) {
     for(int i = 1; i < 7; ++i) {
@@ -50,7 +49,7 @@ TEST_CASE("e^x", "[exp]") {
 }
 
 TEST_CASE("Natural logarithm", "[log]") {
-    //REQUIRE( sm::log(0) == std::log(0) );
+    REQUIRE( sm::log(0.0) == std::log(0.0) );
     for(double i = 0.3; i < 10; i+=0.3) {
         CAPTURE( i );
         REQUIRE( Approx(sm::log(i)).epsilon(0.05) == std::log(i) );

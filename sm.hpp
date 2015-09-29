@@ -1,5 +1,3 @@
-#include <iostream>
-
 namespace sm {
     template<typename T, long n>
         struct fac {
@@ -144,7 +142,9 @@ namespace sm {
     
     template<typename N>
         N log(N x) {
-            if(x <= 0.5)
+            if(x == 0) 
+                return -std::numeric_limits<N>::infinity();
+            else if(x <= 0.5)
                 return sum<N, log_term1<N>, 1, 1, false>(x);
             else
                 return sum<N, log_term2<N>, 1, 1, false>(x);

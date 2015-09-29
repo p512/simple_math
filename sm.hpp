@@ -122,6 +122,11 @@ namespace sm {
             return pow((x - 1) / x, i) / (N)i;
         }
 
+    template<typename T>
+        T abs(T x) {
+            return x > -x ? x : -x;
+        }
+    
     template<typename N>
         N sin(N x) {
             N mult = 1;

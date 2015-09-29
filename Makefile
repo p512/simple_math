@@ -17,5 +17,8 @@ test: sm.hpp test.cpp
 	$(CC) $(CDEBUG) test.cpp $(LDFLAGS) -o test
 	$(info Test file is compiled to ./test)
 
+acc: sm.hpp accuracy.cpp
+	$(CC) $(CFLAGS) accuracy.cpp $(LDFLAGS) -o acc
+
 clean:
 	rm -vf *.o *.so *.gch $(EXEC)
